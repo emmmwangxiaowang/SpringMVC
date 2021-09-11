@@ -19,7 +19,7 @@
     </bean>
 
     <!--BeanNameUrlHandlerMapping:bean-->
-    <!--请求的地址-->
+    <!--请求的地址 -->
     <bean id="/hello" class="com.wang.controller.HelloController"/>
 
 </beans>
