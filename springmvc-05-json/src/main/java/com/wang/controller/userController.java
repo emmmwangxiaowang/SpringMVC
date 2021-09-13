@@ -1,5 +1,6 @@
 package com.wang.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wang.pojo.user;
@@ -74,4 +75,25 @@ public class userController
         return JsonUtils.getJson(date, "yyyy-MM-dd HH:mm:ss");
     }
 
+    @RequestMapping(value = "/j4")
+    @ResponseBody  //不会走视图解析器,会直接返回一个字符串
+    public String test4() throws JsonProcessingException
+    {
+        List <user> userList = new ArrayList <>();
+        user        user     = new user(1, "王小王", 20);
+        user        user1    = new user(1, "王小王", 20);
+        user        user2    = new user(1, "王小王", 20);
+        user        user3    = new user(1, "王小王", 20);
+        user        user4    = new user(1, "王小王", 20);
+        user        user5    = new user(1, "王小王", 20);
+        userList.add(user);
+        userList.add(user1);
+        userList.add(user2);
+        userList.add(user3);
+        userList.add(user4);
+        userList.add(user5);
+
+        String s = JSON.toJSONString(userList);
+        return s;
+    }
 }
