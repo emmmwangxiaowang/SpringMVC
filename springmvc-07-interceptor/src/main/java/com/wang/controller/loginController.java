@@ -40,5 +40,6 @@ public class loginController
     {
         session.removeAttribute("userLoginInfo");
         return "login";
+        //return goLogin();
     }
 }
